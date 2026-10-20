@@ -9,7 +9,7 @@
             box-sizing: border-box;
         }
         body {
-            /* Nền trắng pha xanh dương / xanh ngọc dịu mắt */
+            /* Nền trắng pha xanh dương Blue nhẹ nhàng */
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
@@ -41,7 +41,7 @@
             font-weight: 600;
         }
 
-        /* Phong Bì Thư BAN ĐẦU - Nền trắng ở giữa viền xanh Blue */
+        /* Phong Bì Thư BAN ĐẦU - Nền trắng viền xanh Blue */
         .envelope {
             position: relative;
             width: 100%;
@@ -81,7 +81,7 @@
             box-shadow: 0 8px 22px rgba(9, 132, 227, 0.4);
         }
 
-        /* Bức thư ẩn (Hiện ra khi bấm nút) - Nền trắng giữa viền xanh Blue */
+        /* Bức thư ẩn (Hiện ra khi bấm nút) */
         .letter-card {
             display: none;
             background: #ffffff;
@@ -181,7 +181,6 @@
             document.getElementById('envelopeView').style.display = 'none';
             document.getElementById('letterView').style.display = 'block';
             
-            // Kích hoạt video phát mượt mà khi mở thư
             var video = document.querySelector('.logo-video');
             if (video) {
                 video.play().catch(function(error) {
