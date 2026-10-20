@@ -153,19 +153,19 @@
 
         <!-- Bức thư hiện ra sau khi nhấn -->
         <div id="letterView" class="letter-card">
-            <!-- Video logo xoay -->
-            <video class="logo-video" autoplay loop muted playsinline>
+            <!-- Video logo xoay tự động chạy -->
+            <video class="logo-video" autoplay loop muted playsinline webkit-playsinline>
                 <source src="logo.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
 
-            <!-- Lời chúc ý nghĩa -->
+            <!-- Lời chúc ý nghĩa đã bỏ "Chúc Em" -->
             <div class="message-box">
-                <span class="heart-icon">💖</span> <strong>Chúc Em</strong> Mỗi người nữ là một nét đẹp riêng mà Thiên Chúa đã ân ban - có dịu dàng, có mạnh mẽ, có những hy sinh âm thầm chẳng phải ai cũng nhìn thấy. 
+                <span class="heart-icon">💖</span> Mỗi người nữ là một nét đẹp riêng mà Thiên Chúa đã ân ban - có dịu dàng, có mạnh mẽ, có những hy sinh âm thầm chẳng phải ai cũng nhìn thấy. 
                 <br><br>
                 💥 Nhân ngày 20/10, Gia đình Sinh viên Công giáo Y Dược gửi đến những đóa hoa của gia đình mình thật nhiều yêu thương. Chúc các chị, các bạn, các em luôn can đảm theo đuổi ước mơ, bình an giữa những bộn bề và luôn nhận ra mình quý giá trong ánh mắt Thiên Chúa. 
                 <br><br>
-                🙏 Nguyện xin Thiên Chúa và Mẹ Maria ban cho em và gia đình luôn được bình an, hạnh phúc và gặt hái được nhiều hồng ân trong công việc cũng như cuộc sống! ✨🕊️
+                🙏 Nguyện xin Thiên Chúa và Mẹ Maria ban cho mọi người và gia đình luôn được bình an, hạnh phúc và gặt hái được nhiều hồng ân trong công việc cũng như cuộc sống! ✨🕊️
             </div>
 
             <div class="footer-note">
@@ -178,6 +178,14 @@
         function openLetter() {
             document.getElementById('envelopeView').style.display = 'none';
             document.getElementById('letterView').style.display = 'block';
+            
+            // Ép video tự động phát lại khi mở thư để đảm bảo luôn chạy mượt mà
+            var video = document.querySelector('.logo-video');
+            if (video) {
+                video.play().catch(function(error) {
+                    console.log("Video auto-play handled:", error);
+                });
+            }
         }
     </script>
 </body>
