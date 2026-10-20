@@ -93,7 +93,7 @@
         /* Video logo xoay */
         .logo-video {
             width: 100%;
-            max-height: 280px;
+            max-height: 250px;
             object-fit: contain;
             border-radius: 16px;
             margin-bottom: 15px;
@@ -106,7 +106,7 @@
             border-left: 4px solid #00b894;
             text-align: justify;
             color: #2c3e50;
-            font-size: 15.5px;
+            font-size: 15px;
             line-height: 1.7;
             margin-top: 15px;
         }
@@ -114,6 +114,14 @@
         .heart-icon {
             color: #00b894;
             font-size: 18px;
+        }
+
+        .footer-note {
+            margin-top: 15px;
+            font-size: 14.5px;
+            color: #004d40;
+            font-weight: 600;
+            line-height: 1.5;
         }
 
         @keyframes openUp {
@@ -137,7 +145,7 @@
         <!-- Phong bì kèm nút mở thư -->
         <div id="envelopeView" class="envelope" onclick="openLetter()">
             <div style="font-size: 60px; margin-bottom: 10px;">✉️</div>
-            <div style="color: white; font-size: 19px; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Bạn có 1 bức thư tình cảm chưa mở!</div>
+            <div style="color: white; font-size: 17px; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">💐 GỬI TỚI NHỮNG ĐÓA HOA CỦA Y DƯỢC 💐</div>
             <br>
             <button class="btn-open">💌 Mở Thư Ngay</button>
         </div>
@@ -152,12 +160,24 @@
 
             <!-- Lời chúc ý nghĩa -->
             <div class="message-box">
-                <span class="heart-icon">💖</span> <strong>Chúc Em</strong> một ngày 20/10 thật ý nghĩa, xinh đẹp và ngập tràn niềm vui, mạnh khoẻ cũng như luôn tươi cười rạng rỡ hơn hiện tại nhoaa. 
+                <span class="heart-icon">💖</span> <strong>Chúc Em</strong> Mỗi người nữ là một nét đẹp riêng mà Thiên Chúa đã ân ban - có dịu dàng, có mạnh mẽ, có những hy sinh âm thầm chẳng phải ai cũng nhìn thấy. 
                 <br><br>
-                🙏 Nguyện xin Thiên Chúa và mẹ Maria ban cho em và gia đình luôn được bình an, hạnh phúc và gặt hái được nhiều hồng ân trong công việc cũng như cuộc sống! ✨🕊️
+                💥 Nhân ngày 20/10, Gia đình Sinh viên Công giáo Y Dược gửi đến những đóa hoa của gia đình mình thật nhiều yêu thương. Chúc các chị, các bạn, các em luôn can đảm theo đuổi ước mơ, bình an giữa những bộn bề và luôn nhận ra mình quý giá trong ánh mắt Thiên Chúa. 
+                <br><br>
+                🙏 Nguyện xin Thiên Chúa và Mẹ Maria ban cho em và gia đình luôn được bình an, hạnh phúc và gặt hái được nhiều hồng ân trong công việc cũng như cuộc sống! ✨🕊️
+            </div>
+
+            <div class="footer-note">
+                💐 Mong cho những đóa hoa của Gia đình Y Dược luôn nở rộ theo cách riêng, sống trọn vẹn trong tình yêu, ân sủng và để ánh sáng của Chúa dịu dàng toả rạng qua từng điều nhỏ bé mà mình trao đi! ✨
             </div>
         </div>
     </div>
 
     <script>
         function openLetter() {
+            document.getElementById('envelopeView').style.display = 'none';
+            document.getElementById('letterView').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
