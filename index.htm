@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💐 Lời Chúc 20/10 Yêu Thương 💐</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            /* Đổi nền sang tông màu xanh tươi mát, hài hòa */
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        h1 {
+            color: #006266;
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .sub-title {
+            color: #004d40;
+            font-size: 14px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Phong Bì Thư BAN ĐẦU */
+        .envelope {
+            position: relative;
+            width: 100%;
+            background: #00b894;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 150, 136, 0.35);
+            padding: 40px 20px 30px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .envelope:hover {
+            transform: scale(1.02);
+        }
+
+        /* Nút Bấm Mở Thư */
+        .btn-open {
+            background: #ffffff;
+            color: #00b894;
+            border: none;
+            padding: 14px 32px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .btn-open:hover {
+            transform: scale(1.08);
+            background: #e8f8f5;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Bức thư ẩn (Hiện ra khi bấm nút) */
+        .letter-card {
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0, 100, 90, 0.25);
+            text-align: center;
+            border: 2px solid #b2dfdb;
+            animation: openUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* Video logo xoay */
+        .logo-video {
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .flower-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            border-radius: 16px;
+            margin: 5px 0 15px 0;
+            filter: drop-shadow(0 10px 15px rgba(0, 150, 136, 0.2));
+        }
+
+        .message-box {
+            background: #e0f2f1;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid #00b894;
+            text-align: justify;
+            color: #2c3e50;
+            font-size: 15.5px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        .heart-icon {
+            color: #00b894;
+            font-size: 18px;
+        }
+
+        @keyframes openUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>✨ Happy Vietnamese Women's Day ✨</h1>
+        <div class="sub-title">🌸 20.10 - Gửi ngàn yêu thương 🌸</div>
+
+        <!-- Phong bì kèm nút mở thư -->
+        <div id="envelopeView" class="envelope" onclick="openLetter()">
+            <div style="font-size: 60px; margin-bottom: 10px;">✉️</div>
+            <div style="color: white; font-size: 19px; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Bạn có 1 bức thư tình cảm chưa mở!</div>
+            <br>
+            <button class="btn-open">💌 Mở Thư Ngay</button>
+        </div>
+
+        <!-- Bức thư hiện ra sau khi nhấn -->
+        <div id="letterView" class="letter-card">
+            <!-- Hiển thị video logo xoay (Lưu ý tải video đặt tên là logo.mp4) -->
+            <video class="logo-video" autoplay loop muted playsinline>
+                <source src="logo.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+
+            <!-- Ảnh bó hoa -->
+            <img src="123.jpg" alt="Bó hoa yêu thương" class="flower-img">
+
+            <!-- Lời chúc ý nghĩa -->
+            <div class="message-box">
+                <span class="heart-icon">💖</span> <strong>Chúc Em</strong> một ngày 20/10 thật ý nghĩa, xinh đẹp và ngập tràn niềm vui, mạnh khoẻ cũng như luôn tươi cười rạng rỡ hơn hiện tại nhoaa. 
+                <br><br>
+                🙏 Nguyện xin Thiên Chúa và mẹ Maria ban cho em và gia đình luôn được bình an, hạnh phúc và gặt hái được nhiều hồng ân trong công việc cũng như cuộc sống! ✨🕊️
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById('envelopeView').style.display = 'none';
+            document.getElementById('letterView').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
