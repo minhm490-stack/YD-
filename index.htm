@@ -9,7 +9,6 @@
             box-sizing: border-box;
         }
         body {
-            /* Đổi nền sang tông màu xanh tươi mát, hài hòa */
             background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             min-height: 100vh;
             display: flex;
@@ -94,19 +93,10 @@
         /* Video logo xoay */
         .logo-video {
             width: 100%;
-            max-height: 220px;
-            object-fit: contain;
-            border-radius: 12px;
-            margin-bottom: 10px;
-        }
-
-        .flower-img {
-            width: 100%;
-            max-height: 320px;
+            max-height: 280px;
             object-fit: contain;
             border-radius: 16px;
-            margin: 5px 0 15px 0;
-            filter: drop-shadow(0 10px 15px rgba(0, 150, 136, 0.2));
+            margin-bottom: 15px;
         }
 
         .message-box {
@@ -154,14 +144,11 @@
 
         <!-- Bức thư hiện ra sau khi nhấn -->
         <div id="letterView" class="letter-card">
-            <!-- Hiển thị video logo xoay (Lưu ý tải video đặt tên là logo.mp4) -->
+            <!-- Video logo xoay -->
             <video class="logo-video" autoplay loop muted playsinline>
                 <source src="logo.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
-
-            <!-- Ảnh bó hoa -->
-            <img src="123.jpg" alt="Bó hoa yêu thương" class="flower-img">
 
             <!-- Lời chúc ý nghĩa -->
             <div class="message-box">
@@ -174,9 +161,3 @@
 
     <script>
         function openLetter() {
-            document.getElementById('envelopeView').style.display = 'none';
-            document.getElementById('letterView').style.display = 'block';
-        }
-    </script>
-</body>
-</html>
