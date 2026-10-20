@@ -9,7 +9,6 @@
             box-sizing: border-box;
         }
         body {
-            /* Nền trắng pha xanh dương Blue nhẹ nhàng */
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
@@ -41,7 +40,6 @@
             font-weight: 600;
         }
 
-        /* Khung chứa ban đầu - Nền trắng viền xanh Blue */
         .envelope {
             position: relative;
             width: 100%;
@@ -49,26 +47,20 @@
             border: 3px solid #0984e3;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(9, 132, 227, 0.2);
-            padding: 30px 20px;
+            padding: 25px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .envelope:hover {
-            transform: scale(1.02);
-            box-shadow: 0 18px 40px rgba(9, 132, 227, 0.3);
-        }
-
-        /* Video hiển thị ở màn hình ngoài */
         .preview-video {
             width: 100%;
             max-height: 220px;
             object-fit: contain;
             border-radius: 12px;
             margin-bottom: 12px;
+            display: block;
         }
 
-        /* Nút Bấm Mở Thư */
         .btn-open {
             background: linear-gradient(135deg, #0984e3, #74b9ff);
             color: #ffffff;
@@ -80,17 +72,15 @@
             font-weight: bold;
             box-shadow: 0 6px 18px rgba(9, 132, 227, 0.3);
             transition: all 0.3s ease;
-            margin-top: 15px;
+            margin-top: 10px;
             display: inline-block;
         }
 
         .btn-open:hover {
             transform: scale(1.08);
             background: linear-gradient(135deg, #0765ae, #0984e3);
-            box-shadow: 0 8px 22px rgba(9, 132, 227, 0.4);
         }
 
-        /* Bức thư ẩn (Hiện ra khi bấm nút) */
         .letter-card {
             display: none;
             background: #ffffff;
@@ -100,15 +90,6 @@
             text-align: center;
             border: 3px solid #0984e3;
             animation: openUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-
-        /* Video logo xoay bên trong thư */
-        .logo-video {
-            width: 100%;
-            max-height: 250px;
-            object-fit: contain;
-            border-radius: 16px;
-            margin-bottom: 15px;
         }
 
         .message-box {
@@ -154,28 +135,20 @@
         <h1>✨ Happy Vietnamese Women's Day ✨</h1>
         <div class="sub-title">🌸 20.10 - Gửi ngàn yêu thương 🌸</div>
 
-        <!-- Màn hình ban đầu: Thay icon lá thư bằng Video Logo Xoay -->
+        <!-- Màn hình chính hiển thị video logo xoay -->
         <div id="envelopeView" class="envelope">
-            <!-- Video logo chạy ngoài màn hình chính -->
             <video class="preview-video" autoplay loop muted playsinline webkit-playsinline>
                 <source src="logo.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
             
-            <div style="color: #0984e3; font-size: 17px; font-weight: 700; margin-top: 10px;">💐 GỬI TỚI NHỮNG ĐÓA HOA CỦA Y DƯỢC 💐</div>
-            <br>
+            <div style="color: #0984e3; font-size: 16px; font-weight: 700; margin-top: 5px;">💐 GỬI TỚI NHỮNG ĐÓA HOA CỦA Y DƯỢC 💐</div>
+            
             <button class="btn-open" onclick="openLetter()">💌 Mở Thư Ngay</button>
         </div>
 
         <!-- Bức thư hiện ra sau khi nhấn -->
         <div id="letterView" class="letter-card">
-            <!-- Video logo xoay bên trong thư -->
-            <video class="logo-video" autoplay loop muted playsinline webkit-playsinline>
-                <source src="logo.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ video.
-            </video>
-
-            <!-- Lời chúc ý nghĩa -->
             <div class="message-box">
                 <span class="heart-icon">💖</span> Mỗi người nữ là một nét đẹp riêng mà Thiên Chúa đã ân ban - có dịu dàng, có mạnh mẽ, có những hy sinh âm thầm chẳng phải ai cũng nhìn thấy. 
                 <br><br>
@@ -194,14 +167,6 @@
         function openLetter() {
             document.getElementById('envelopeView').style.display = 'none';
             document.getElementById('letterView').style.display = 'block';
-            
-            // Kích hoạt tất cả video tự động chạy mượt mà khi mở thư
-            var videos = document.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.play().catch(function(error) {
-                    console.log("Auto-play error:", error);
-                });
-            });
         }
     </script>
 </body>
