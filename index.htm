@@ -41,7 +41,7 @@
             font-weight: 600;
         }
 
-        /* Phong Bì Thư BAN ĐẦU - Nền trắng viền xanh Blue */
+        /* Khung chứa ban đầu - Nền trắng viền xanh Blue */
         .envelope {
             position: relative;
             width: 100%;
@@ -49,7 +49,7 @@
             border: 3px solid #0984e3;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(9, 132, 227, 0.2);
-            padding: 40px 20px 30px 20px;
+            padding: 30px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -57,6 +57,15 @@
         .envelope:hover {
             transform: scale(1.02);
             box-shadow: 0 18px 40px rgba(9, 132, 227, 0.3);
+        }
+
+        /* Video hiển thị ở màn hình ngoài */
+        .preview-video {
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 12px;
         }
 
         /* Nút Bấm Mở Thư */
@@ -71,7 +80,7 @@
             font-weight: bold;
             box-shadow: 0 6px 18px rgba(9, 132, 227, 0.3);
             transition: all 0.3s ease;
-            margin-top: 20px;
+            margin-top: 15px;
             display: inline-block;
         }
 
@@ -93,7 +102,7 @@
             animation: openUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
-        /* Video logo xoay */
+        /* Video logo xoay bên trong thư */
         .logo-video {
             width: 100%;
             max-height: 250px;
@@ -145,17 +154,22 @@
         <h1>✨ Happy Vietnamese Women's Day ✨</h1>
         <div class="sub-title">🌸 20.10 - Gửi ngàn yêu thương 🌸</div>
 
-        <!-- Phong bì kèm nút mở thư -->
-        <div id="envelopeView" class="envelope" onclick="openLetter()">
-            <div style="font-size: 60px; margin-bottom: 10px;">✉️</div>
-            <div style="color: #0984e3; font-size: 17px; font-weight: 700;">💐 GỬI TỚI NHỮNG ĐÓA HOA CỦA Y DƯỢC 💐</div>
+        <!-- Màn hình ban đầu: Thay icon lá thư bằng Video Logo Xoay -->
+        <div id="envelopeView" class="envelope">
+            <!-- Video logo chạy ngoài màn hình chính -->
+            <video class="preview-video" autoplay loop muted playsinline webkit-playsinline>
+                <source src="logo.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+            
+            <div style="color: #0984e3; font-size: 17px; font-weight: 700; margin-top: 10px;">💐 GỬI TỚI NHỮNG ĐÓA HOA CỦA Y DƯỢC 💐</div>
             <br>
-            <button class="btn-open">💌 Mở Thư Ngay</button>
+            <button class="btn-open" onclick="openLetter()">💌 Mở Thư Ngay</button>
         </div>
 
         <!-- Bức thư hiện ra sau khi nhấn -->
         <div id="letterView" class="letter-card">
-            <!-- Video logo xoay -->
+            <!-- Video logo xoay bên trong thư -->
             <video class="logo-video" autoplay loop muted playsinline webkit-playsinline>
                 <source src="logo.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ video.
@@ -181,12 +195,13 @@
             document.getElementById('envelopeView').style.display = 'none';
             document.getElementById('letterView').style.display = 'block';
             
-            var video = document.querySelector('.logo-video');
-            if (video) {
+            // Kích hoạt tất cả video tự động chạy mượt mà khi mở thư
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
                 video.play().catch(function(error) {
                     console.log("Auto-play error:", error);
                 });
-            }
+            });
         }
     </script>
 </body>
